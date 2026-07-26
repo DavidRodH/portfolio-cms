@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portafolio David Rodriguez",
+  title: "Portafolio David Rodríguez",
   description: "Portafolio de poryectos desarrollados por David Rodriguez",
 };
 
