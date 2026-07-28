@@ -3,11 +3,13 @@ import { ReactNode } from "react";
 interface ButtonProps {
   children: ReactNode;
   variant?: "primary" | "secondary";
+  onClick?: () => void;
 }
 
 export default function Button({
   children,
   variant = "primary",
+  onClick,
 }: ButtonProps) {
   const base =
     "rounded-xl px-8 py-3 font-semibold transition";
@@ -21,7 +23,7 @@ export default function Button({
   };
 
   return (
-    <button className={`${base} ${styles[variant]}`}>
+    <button onClick={onClick} className={`${base} ${styles[variant]}`}>
       {children}
     </button>
   );
