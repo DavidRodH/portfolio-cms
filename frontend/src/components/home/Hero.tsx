@@ -1,4 +1,43 @@
 import Container from "../common/Container";
+import { Hero as HeroType } from "@/types/hero";
+
+interface HeroProps {
+  hero: HeroType;
+}
+
+export default function Hero({ hero }: HeroProps) {
+  return (
+    <section className="min-h-screen bg-slate-950 text-white">
+      <Container>
+        <div className="flex min-h-screen items-center">
+
+          <div>
+
+            <span className="text-blue-500 font-semibold">
+              Hola, soy
+            </span>
+
+            <h1 className="mt-4 text-5xl font-bold">
+              {hero.title}
+            </h1>
+
+            <p className="mt-8 text-slate-400">
+              {hero.subtitle}
+            </p>
+
+            <button className="mt-8 rounded-xl bg-blue-600 px-8 py-3">
+              {hero.buttonText}
+            </button>
+
+          </div>
+
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+/* import Container from "../common/Container";
 
 export default function Hero() {
   return (
@@ -53,4 +92,4 @@ export default function Hero() {
       </Container>
     </section>
   );
-}
+} */
