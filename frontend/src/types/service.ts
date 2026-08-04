@@ -3,6 +3,7 @@ export interface Service {
   title: string;
   slug: string;
   shortDescription: string;
+  description: string;
   icon: string;
   featured: boolean;
   image?: {

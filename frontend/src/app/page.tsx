@@ -1,15 +1,8 @@
-/* import About from "@/components/home/About";
-import Services from "@/components/home/Services";
-import Portfolio from "@/components/home/Portfolio";
-import Technologies from "@/components/home/Technologies";
-import Testimonials from "@/components/home/Testimonials";
-import Blog from "@/components/home/Blog";
-import Contact from "@/components/home/Contact"; */
-
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 
 import { getHero } from "@/services/heroService";
+
 import { getServices } from "@/services/serviceService";
 
 export default async function Home() {
@@ -30,6 +23,25 @@ export default async function Home() {
     </>
   );
 }
+
+export async function generateStaticParams() {
+  const services = await getServices();
+
+  return services.map((service) => ({
+    slug: service.slug,
+  }));
+}
+
+
+
+
+/* import About from "@/components/home/About";
+import Services from "@/components/home/Services";
+import Portfolio from "@/components/home/Portfolio";
+import Technologies from "@/components/home/Technologies";
+import Testimonials from "@/components/home/Testimonials";
+import Blog from "@/components/home/Blog";
+import Contact from "@/components/home/Contact"; */
 
 /* export default function Home() {
   return (
