@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Card from "../common/Card";
 import { Service } from "@/types/service";
+import { getMediaUrl } from "@/lib/media";
 
 interface ServiceCardProps {
   service: Service;
@@ -13,7 +14,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       <Card>
           {service.image && (
             <Image
-              src={`http://localhost:1337${service.image.url}`}
+              src={getMediaUrl(service.image.url)}
               alt={service.title}
               width={400}
               height={250}

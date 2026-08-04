@@ -1,15 +1,17 @@
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
-
 import { getHero } from "@/services/heroService";
-
 import { getServices } from "@/services/serviceService";
+import Portfolio from "@/components/home/Portfolio";
+import { getProjects } from "@/services/projectService";
 
 export default async function Home() {
 
   const hero = await getHero();
 
   const services = await getServices();
+
+  const projects = await getProjects();
 
   if (!hero) {
     return <p>Error cargando Hero.</p>;
@@ -19,7 +21,9 @@ export default async function Home() {
     <>
       <Hero hero={hero} />
 
-      <Services services={services} />  
+      <Services services={services} />
+
+      <Portfolio projects={projects} />
     </>
   );
 }
