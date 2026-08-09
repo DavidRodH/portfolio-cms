@@ -18,3 +18,4 @@ export interface Project {
 
   technologies?: Technology[];
 }
+

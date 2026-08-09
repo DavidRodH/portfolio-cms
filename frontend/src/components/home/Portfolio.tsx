@@ -1,6 +1,7 @@
 import Container from "../common/Container";
 import SectionTitle from "../common/SectionTitle";
-import ProjectCard from "./ProjectCard";
+
+import PortfolioClient from "./PortfolioClient";
 
 import { Project } from "@/types/project";
 
@@ -11,11 +12,6 @@ interface Props {
 export default function Portfolio({
   projects,
 }: Props) {
-
-  const featuredProjects = projects.filter(
-    (project) => project.featured
-  );
-
   return (
     <section
       id="portfolio"
@@ -28,16 +24,9 @@ export default function Portfolio({
           subtitle="Algunos proyectos desarrollados recientemente."
         />
 
-        <div className="grid gap-8 md:grid-cols-2">
-
-          {featuredProjects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-            />
-          ))}
-
-        </div>
+        <PortfolioClient
+          projects={projects}
+        />
 
       </Container>
     </section>
