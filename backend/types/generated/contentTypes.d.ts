@@ -458,7 +458,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     cv: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.Text;
     experience: Schema.Attribute.Integer;
     fullName: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

@@ -17,9 +17,6 @@
     "profession": {
       "type": "string"
     },
-    "description": {
-      "type": "richtext"
-    },
     "experience": {
       "type": "integer"
     },
@@ -42,6 +39,9 @@
         "videos",
         "audios"
       ]
+    },
+    "description": {
+      "type": "text"
     }
   }
 }
