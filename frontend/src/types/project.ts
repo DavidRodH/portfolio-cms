@@ -1,7 +1,4 @@
-export interface Technology {
-  id: number;
-  name: string;
-}
+import { Technology } from "./technology";
 
 export interface Project {
   id: number;
@@ -18,4 +15,3 @@ export interface Project {
 
   technologies?: Technology[];
 }
-
