@@ -1,7 +1,38 @@
-export default function Testimonials() {
+import Container from "../common/Container";
+import SectionTitle from "../common/SectionTitle";
+
+import TestimonialsClient from "./TestimonialsClient";
+
+import { Testimonial } from "@/types/testimonial";
+
+interface Props {
+  testimonials: Testimonial[];
+}
+
+export default function Testimonials({
+  testimonials,
+}: Props) {
   return (
-    <section className="py-32">
-      Testimonials
+    <section
+      id="testimonials"
+      className="py-32"
+    >
+      <Container>
+
+        <SectionTitle
+          title="Testimonios"
+          subtitle="Lo que dicen algunos de mis clientes."
+        />
+
+        <div className="mx-auto max-w-3xl">
+
+          <TestimonialsClient
+            testimonials={testimonials}
+          />
+
+        </div>
+
+      </Container>
     </section>
   );
 }

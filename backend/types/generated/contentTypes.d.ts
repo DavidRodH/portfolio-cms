@@ -685,7 +685,6 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   };
   attributes: {
     clientName: Schema.Attribute.String;
-    comment: Schema.Attribute.RichText;
     company: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -696,9 +695,18 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
       'api::testimonial.testimonial'
     > &
       Schema.Attribute.Private;
+    message: Schema.Attribute.Text;
     photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     position: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    rating: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 1;
+        },
+        number
+      >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

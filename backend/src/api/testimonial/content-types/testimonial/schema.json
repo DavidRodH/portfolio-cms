@@ -20,9 +20,6 @@
     "position": {
       "type": "string"
     },
-    "comment": {
-      "type": "richtext"
-    },
     "photo": {
       "type": "media",
       "multiple": false,
@@ -32,6 +29,14 @@
         "videos",
         "audios"
       ]
+    },
+    "message": {
+      "type": "text"
+    },
+    "rating": {
+      "type": "integer",
+      "min": 1,
+      "max": 5
     }
   }
 }

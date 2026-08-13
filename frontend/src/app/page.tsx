@@ -8,18 +8,17 @@ import About from "@/components/home/About";
 import { getAbout } from "@/services/aboutService";
 import Technologies from "@/components/home/Technologies";
 import { getTechnologies } from "@/services/technologyService";
+import Testimonials from "@/components/home/Testimonials";
+import { getTestimonials } from "@/services/testimonialService";
 
 export default async function Home() {
 
   const hero = await getHero();
-
   const services = await getServices();
-
   const projects = await getProjects();
-
   const about = await getAbout();
-
   const technologies = await getTechnologies();
+  const testimonials = await getTestimonials();
 
   if (!hero) {
     return <p>Error cargando Hero.</p>;
@@ -38,6 +37,8 @@ export default async function Home() {
       <Portfolio projects={projects} />
 
       <Technologies technologies={technologies} />
+
+      <Testimonials testimonials={testimonials} />
     </>
   );
 }
