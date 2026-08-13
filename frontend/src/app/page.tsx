@@ -10,6 +10,7 @@ import Technologies from "@/components/home/Technologies";
 import { getTechnologies } from "@/services/technologyService";
 import Testimonials from "@/components/home/Testimonials";
 import { getTestimonials } from "@/services/testimonialService";
+import Contact from "@/components/home/Contact";
 
 export default async function Home() {
 
@@ -39,6 +40,8 @@ export default async function Home() {
       <Technologies technologies={technologies} />
 
       <Testimonials testimonials={testimonials} />
+
+      <Contact />
     </>
   );
 }
