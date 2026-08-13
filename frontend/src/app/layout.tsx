@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
+import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portafolio David Rodríguez",
-  description: "Portafolio de poryectos desarrollados por David Rodriguez",
+  title: "David Rodriguez | Desarrollador Web",
+  description:
+    "Portafolio profesional de desarrollo web.",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -18,7 +18,9 @@ export default function RootLayout({
       <body className="bg-slate-950">
         <Navbar />
 
-        {children}
+        <main>
+          {children}
+        </main>
 
         <Footer />
       </body>

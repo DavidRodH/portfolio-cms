@@ -7,7 +7,10 @@ interface HeroProps {
 
 export default function Hero({ hero }: HeroProps) {
   return (
-    <section className="min-h-screen bg-slate-950 text-white">
+    <section 
+      id="home" 
+      className="min-h-screen bg-slate-950 text-white"
+    >
       <Container>
         <div className="flex min-h-screen items-center">
 
