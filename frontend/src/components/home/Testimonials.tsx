@@ -15,7 +15,7 @@ export default function Testimonials({
   return (
     <section
       id="testimonials"
-      className="scroll-mt-24 py-32"
+      className="py-32"
     >
       <Container>
 
